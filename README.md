@@ -1,12 +1,10 @@
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=8022F5&style=flat">
   <img src="https://img.shields.io/static/v1?label=languages&message=2&color=A8A60C&style=flat">
-  <a href="https://www.linkedin.com/in/otaviocesar/"><img src="https://img.shields.io/static/v1?label=feito%20por&message=Otávio&color=4B00A8&style=flat"></a>
-
 </p>
 
 <h1 align="center">
-    <img alt="Banner do projeto" title="#" src="./assets/images/projeto08.extra.preview" />
+    <img alt="Banner do projeto" title="#" src="./assets/images/projeto08.extra.preview.png" />
 </h1>
 
 <h4 align="center">
