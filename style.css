@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --ff-palaquin: "Palanquin", sans-serif;
+  --ff-staatliches: "Staatliches", sans-serif;
+
+  --color-font-white: hsl(0, 0%, 100%);
+  --color-font-purple: hsl(274, 84%, 12%);
+  --color-font-gray: hsl(232, 17%, 35%);
+  --color-bottom-white: hsl(312, 91%, 96%);
+  --color-background-header-h1: hsl(275, 18%, 79%);
+  --color-background-header: hsl(218, 17%, 62%);
+  --color-background-body: hsl(233, 100%, 97%);
+}
+
+.page {
+  margin: 0 auto;
+}
+
+body {
+  display: grid;
+  font-size: 1.6rem;
+  background-color: var(--color-background-body);
+}
+
+header {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  animation-name: topDown;
+  animation-duration: 700ms;
+}
+
+.container {
+  background-color: var(--color-background-header);
+  padding-bottom: 3rem;
+}
+
+header img {
+  width: 13.7rem;
+  margin: 3.2rem auto;
+}
+header h1 {
+  font-family: var(--ff-staatliches);
+  background-color: var(--color-background-header-h1);
+  color: var(--color-font-white);
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 3.4rem;
+  letter-spacing: 2px;
+  padding: 1rem;
+  text-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+header p {
+  font-family: var(--ff-palaquin);
+  color: var(--color-font-purple);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2rem;
+  align-items: center;
+  text-align: center;
+  margin: 1.4rem 3.4rem 6.4rem;
+}
+
+main {
+  display: grid;
+  gap: 3.2rem;
+  margin: 0 3.2rem;
+
+  animation-name: downTop;
+  animation-duration: 700ms;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+
+  transition: all 500ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+}
+
+.card span {
+  font-family: var(--ff-staatliches);
+  color: var(--color-font-gray);
+  background-color: var(--color-bottom-white);
+
+  position: absolute;
+  right: 1.7rem;
+  top: 1.7rem;
+  border-radius: 2rem;
+
+  height: 3.8rem;
+  width: fit-content;
+  padding: 0 2.4rem;
+
+  display: inline-flex;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 4rem auto;
+  color: var(--color-font-purple);
+  font-family: var(--ff-staatliches);
+}
+
+@keyframes topDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downTop {
+  0% {
+    opacity: 0;
+    transform: translateY(15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+      "A C E"
+      "B C F"
+      "B D F";
+  }
+
+  .card div:nth-child(1) {
+    grid-area: A;
+  }
+
+  .card div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .card div:nth-child(3) {
+    grid-area: C;
+  }
+
+  .card div:nth-child(4) {
+    grid-area: D;
+  }
+
+  .card div:nth-child(5) {
+    grid-area: E;
+  }
+
+  .card div:nth-child(6) {
+    grid-area: F;
+  }
+
+  footer {
+    grid-area: G;
+  }
+}
+
+@media (min-width: 1100px) {
+  .page {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "A B B B"
+      "A B B B"
+      "A B B B"
+      "A C C C";
+  }
+
+  header {
+    grid-area: A;
+    background-color: var(--color-background-header);
+  }
+
+  header p {
+    margin-top: 3.2rem;
+    color: var(--color-font-white);
+  }
+
+  main {
+    grid-area: B;
+    margin: 6.4rem 8rem 5rem;
+  }
+
+  footer {
+    grid-area: C;
+  }
+
+  main {
+    grid-template-areas:
+      "A C E"
+      "B C F"
+      "B D F";
+  }
+
+  .card:nth-child(1) {
+    grid-area: A;
+  }
+  .card:nth-child(2) {
+    grid-area: B;
+  }
+  .card:nth-child(3) {
+    grid-area: D;
+  }
+  .card:nth-child(4) {
+    grid-area: C;
+  }
+  .card:nth-child(5) {
+    grid-area: E;
+  }
+  .card:nth-child(6) {
+    grid-area: F;
+  }
+}
